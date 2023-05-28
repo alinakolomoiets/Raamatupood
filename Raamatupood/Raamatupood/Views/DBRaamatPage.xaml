@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Raamatupood.Views.DBRaamatPage">
+    <StackLayout>
+        <StackLayout >
+            <Label Text="Raamatu Pealkiri" TextColor="DarkCyan" />
+            <Entry Text="{Binding RaamatuPealkiri}"  TextColor="#7A3712" />
+            <Label Text="Raamatu Autor" TextColor="DarkCyan"  />
+            <Entry Text="{Binding RaamatuAutor}" TextColor="#7A3712" />
+            <Label Text="Raamatu Kirjeldus" TextColor="DarkCyan"  />
+            <Entry Text="{Binding RaamatuKirjeldus}"  TextColor="#7A3712"/>
+            <Label Text="Raamatu Kategooria" TextColor="DarkCyan"  />
+            <Entry Text="{Binding RaamatuKategooria} " TextColor="#7A3712"/>
+            <Label Text="Raamatu Pilt" TextColor="DarkCyan"  />
+            <Entry Text="{Binding RaamatuPilt}"  TextColor="#7A3712"/>
+            <Label Text="Raamatu Hind" TextColor="DarkCyan"  />
+            <Entry Text="{Binding RaamatuHind}"  TextColor="#7A3712"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Salvesta" Clicked="SaveRaamat" BackgroundColor="#7A3712"/>
+                <Button Text="Kustuta" Clicked="DeleteRaamat"  BackgroundColor="#7A3712"/>
+                <Button Text="Tühista" Clicked="Cancel" BackgroundColor="#7A3712"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

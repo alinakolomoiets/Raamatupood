@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Raamatupood.Views.DBListPage">
+    <StackLayout>
+        <ListView x:Name="raamatList" ItemsSource="{Binding }" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding RaamatuPealkiri}" FontSize="Medium" TextColor="#7A3712" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Lisada uus raamat" Clicked="CreateRaamat" BackgroundColor="DarkCyan"/>
+    </StackLayout>
+</ContentPage>
