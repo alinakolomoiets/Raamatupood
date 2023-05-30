@@ -15,7 +15,7 @@
             <Label Text="Raamatu Pilt" TextColor="DarkCyan"  />
             <Entry Text="{Binding RaamatuPilt}"  TextColor="#7A3712"/>
             <Label Text="Raamatu Hind" TextColor="DarkCyan"  />
-            <Entry Text="{Binding RaamatuHind}"  TextColor="#7A3712"/>
+            <Entry Text="{Binding RaamatuHind}"  TextColor="#7A3712" Keyboard="Numeric"/>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Salvesta" Clicked="SaveRaamat" BackgroundColor="#7A3712"/>
                 <Button Text="Kustuta" Clicked="DeleteRaamat"  BackgroundColor="#7A3712"/>

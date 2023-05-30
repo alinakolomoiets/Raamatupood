@@ -14,7 +14,7 @@ namespace Raamatupood.Models
             database = new SQLiteConnection(databasePath);
             database.CreateTable<Raamat>();
         }
-        public IEnumerable<Raamat> GetItems()
+        public List<Raamat> GetItems()
         {
             return database.Table<Raamat>().ToList();
         }
