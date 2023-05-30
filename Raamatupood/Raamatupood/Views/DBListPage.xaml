@@ -3,19 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Raamatupood.Views.DBListPage">
     <StackLayout>
-        <ListView x:Name="raamatList" ItemsSource="{Binding }" ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
+        <CollectionView x:Name="raamatList" >
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding RaamatuPealkiri}" FontSize="Medium" TextColor="#7A3712" />
-                            </StackLayout>
-                        </ViewCell.View>
-                    </ViewCell>
+                    <StackLayout >
+                        <Image Source="{Binding RaamatuPilt} " HorizontalOptions="StartAndExpand"/>
+                        <Label Text="{Binding RaamatuPealkiri}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
+                        <Label Text="{Binding RaamatuAutor}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="Start" />
+                    </StackLayout>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
         <Button Text="Lisada uus raamat" Clicked="CreateRaamat" BackgroundColor="DarkCyan"/>
     </StackLayout>
 </ContentPage>
