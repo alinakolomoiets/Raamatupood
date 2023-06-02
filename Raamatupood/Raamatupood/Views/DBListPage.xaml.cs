@@ -33,9 +33,15 @@ namespace Raamatupood.Views
         private async void CreateRaamat(object sender, EventArgs e)
         {
             Raamat raamat = new Raamat();
-            DBRaamatPage friendPage = new DBRaamatPage();
-            friendPage.BindingContext = raamat;
-            await Navigation.PushAsync(friendPage);
+            DBRaamatPage raamatPage = new DBRaamatPage();
+            raamatPage.BindingContext = raamat;
+            await Navigation.PushAsync(raamatPage);
         }
+        private void KategooriaRaamat(object sender, EventArgs e)
+        {
+           var action = DisplayActionSheet("Kategooria", "Ok","Tühista");
+        }
+
+
     }
 }
