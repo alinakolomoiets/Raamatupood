@@ -2,6 +2,7 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Raamatupood.Models
@@ -13,6 +14,25 @@ namespace Raamatupood.Models
         {
             database = new SQLiteConnection(databasePath);
             database.CreateTable<Raamat>();
+
+        }
+        public List<string> GetDistinctKategooriad()
+        {
+            return database.Table<Raamat>().Select(raamat => raamat.RaamatuKategooria).Distinct().ToList();
+        }
+
+        public List<Raamat> GetItemsByKategooria(string kategooria)
+        {
+            return database.Table<Raamat>().Where(raamat => raamat.RaamatuKategooria == kategooria).ToList();
+        }
+        public List<string> GetDistinctHind()
+        {
+            return database.Table<Raamat>().Select(raamat => raamat.RaamatuHind).Distinct().ToList();
+        }
+
+        public List<Raamat> GetItemsByHind(string hind)
+        {
+            return database.Table<Raamat>().Where(raamat => raamat.RaamatuHind == hind).ToList();
         }
         public List<Raamat> GetItems()
         {

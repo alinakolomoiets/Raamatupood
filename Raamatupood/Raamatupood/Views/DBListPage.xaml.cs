@@ -37,11 +37,25 @@ namespace Raamatupood.Views
             raamatPage.BindingContext = raamat;
             await Navigation.PushAsync(raamatPage);
         }
-        private void KategooriaRaamat(object sender, EventArgs e)
+        private async void KategooriaRaamat(object sender, EventArgs e)
         {
-           var action = DisplayActionSheet("Kategooria", "Ok","Tühista");
+            var kategooriad = App.Database.GetDistinctKategooriad(); // Получить список уникальных жанров книг
+            var selectedKategooria = await DisplayActionSheet("Vali kategooria", "Cancel", null, kategooriad.ToArray());
+            if (selectedKategooria != null && selectedKategooria != "Cancel")
+            {
+                var filteredRaamatud = App.Database.GetItemsByKategooria(selectedKategooria); // Получить книги по выбранному жанру
+                raamatList.ItemsSource = filteredRaamatud;
+            }
         }
-
-
+        private async void HindRaamat(object sender, EventArgs e)
+        {
+            var hind = App.Database.GetDistinctHind(); 
+            var selectedHind = await DisplayActionSheet("Vali kategooria", "Cancel", null, hind.ToArray());
+            if (selectedHind != null && selectedHind != "Cancel")
+            {
+                var filteredRaamatud = App.Database.GetItemsByHind(selectedHind); 
+                raamatList.ItemsSource = filteredRaamatud;
+            }
+        }
     }
 }

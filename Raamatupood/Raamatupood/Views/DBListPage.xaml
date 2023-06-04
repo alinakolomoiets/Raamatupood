@@ -20,6 +20,9 @@
             </ListView.ItemTemplate>
         </ListView>
         <Button Text="Lisada uus raamat" Clicked="CreateRaamat" BackgroundColor="DarkCyan"/>
-        <Button Text="Kategooriad" Clicked="KategooriaRaamat" BackgroundColor="DarkCyan"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Kategooriad" Clicked="KategooriaRaamat" BackgroundColor="DarkCyan" />
+            <Button Text="Hind"  Clicked="HindRaamat" BackgroundColor="DarkCyan" />
+        </StackLayout>
     </StackLayout>
 </ContentPage>

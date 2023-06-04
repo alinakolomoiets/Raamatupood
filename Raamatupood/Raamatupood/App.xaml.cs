@@ -1,6 +1,7 @@
 ﻿using Raamatupood.Models;
 using Raamatupood.Views;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -23,6 +24,7 @@ namespace Raamatupood
                 }
                 return database;
             }
+
         }
         public App()
         {
