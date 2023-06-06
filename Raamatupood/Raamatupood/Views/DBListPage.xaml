@@ -2,18 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Raamatupood.Views.DBListPage">
-    <StackLayout>
-        <ListView  x:Name="raamatList"  ItemSelected="OnItemSelected">
+    <StackLayout  BackgroundColor="LightCyan">
+        <ListView  x:Name="raamatList" RowHeight="200" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
-                            <StackLayout Orientation="Horizontal" >
-                                <Image Source="{Binding RaamatuPilt}" HeightRequest="100" WidthRequest="100" />
-                                <Label Text="{Binding RaamatuPealkiri}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand"   />
-                                <Label Text="{Binding RaamatuAutor}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
-                                <Label Text="{Binding RaamatuHind}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
-                            </StackLayout>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="{Binding RaamatuPilt}" HeightRequest="300" WidthRequest="300" />
+                                <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Center">
+                                    <Label Text="{Binding RaamatuPealkiri}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding RaamatuAutor}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding RaamatuHind}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding RaamatuKategooria}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding RaamatuKapp}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
+                                    <Label Text="{Binding RaamatuRiul}" FontSize="Medium" TextColor="#7A3712" HorizontalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </Grid>
                         </ViewCell.View>
                     </ViewCell>
                 </DataTemplate>
@@ -22,7 +31,7 @@
         <Button Text="Lisada uus raamat" Clicked="CreateRaamat" BackgroundColor="DarkCyan"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Button Text="Kategooriad" Clicked="KategooriaRaamat" BackgroundColor="DarkCyan" />
-            <Button Text="Hind"  Clicked="HindRaamat" BackgroundColor="DarkCyan" />
+            <Button Text="Vaata kõik raamatud" Clicked="ShowAllBooks" BackgroundColor="DarkCyan" />
         </StackLayout>
     </StackLayout>
 </ContentPage>

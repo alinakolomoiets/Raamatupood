@@ -25,15 +25,6 @@ namespace Raamatupood.Models
         {
             return database.Table<Raamat>().Where(raamat => raamat.RaamatuKategooria == kategooria).ToList();
         }
-        public List<string> GetDistinctHind()
-        {
-            return database.Table<Raamat>().Select(raamat => raamat.RaamatuHind).Distinct().ToList();
-        }
-
-        public List<Raamat> GetItemsByHind(string hind)
-        {
-            return database.Table<Raamat>().Where(raamat => raamat.RaamatuHind == hind).ToList();
-        }
         public List<Raamat> GetItems()
         {
             return database.Table<Raamat>().ToList();

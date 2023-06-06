@@ -16,5 +16,7 @@ namespace Raamatupood.Models
         public string RaamatuKategooria { get; set; }
         public string RaamatuPilt { get; set; }
         public string RaamatuHind { get; set; }
+        public string RaamatuKapp { get; set; }
+        public string RaamatuRiul { get; set; }
     }
 }
