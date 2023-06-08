@@ -52,5 +52,21 @@ namespace Raamatupood.Views
                 raamatList.ItemsSource = filteredRaamatud;
             }
         }
+        private async void SortButton_Clicked(object sender, EventArgs e)
+        {
+            var kapp = await DisplayActionSheet("Vali kapp", "Tühista", null, "Kapp: 1", "Kapp: 2", "Kapp: 3", "Kapp: 4", "Kapp: 5", "Kapp: 6", "Kapp: 7", "Kapp: 8", "Kapp: 9");
+            if (kapp != null && kapp != "Tühista")
+            {
+                var riul = await DisplayActionSheet("Vali riiul", "Tühista", null, "Riul: 1", "Riul: 2", "Riul: 3", "Riul: 4", "Riul: 5", "Riul: 6");
+                if (riul != null && riul != "Tühista")
+                {
+                    var filteredRaamatud = App.Database.GetItemsByKappAndRiul(kapp, riul); // Получить книги по выбранным значением RaamatuKapp и RaamatuRiul
+                    raamatList.ItemsSource = filteredRaamatud;
+                }
+            }
+        }
+
+
+
     }
 }

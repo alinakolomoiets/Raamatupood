@@ -28,9 +28,12 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Lisada uus raamat" Clicked="CreateRaamat" BackgroundColor="DarkCyan"/>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Button Text="Kategooriad" Clicked="KategooriaRaamat" BackgroundColor="DarkCyan" />
+            <Button Text="Sort kapp ja riul" Clicked="SortButton_Clicked" BackgroundColor="DarkCyan"  />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Lisada uus raamat" Clicked="CreateRaamat" BackgroundColor="DarkCyan"/>
             <Button Text="Vaata kõik raamatud" Clicked="ShowAllBooks" BackgroundColor="DarkCyan" />
         </StackLayout>
     </StackLayout>

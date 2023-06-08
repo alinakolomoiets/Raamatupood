@@ -25,6 +25,11 @@ namespace Raamatupood.Models
         {
             return database.Table<Raamat>().Where(raamat => raamat.RaamatuKategooria == kategooria).ToList();
         }
+        public List<Raamat> GetItemsByKappAndRiul(string kapp, string riul)
+        {
+            return database.Table<Raamat>().Where(raamat => raamat.RaamatuKapp == kapp && raamat.RaamatuRiul == riul).ToList();
+        }
+
         public List<Raamat> GetItems()
         {
             return database.Table<Raamat>().ToList();
