@@ -44,11 +44,11 @@ namespace Raamatupood.Views
 
         private async void KategooriaRaamat(object sender, EventArgs e)
         {
-            var kategooriad = App.Database.GetDistinctKategooriad(); // Получить список уникальных жанров книг
+            var kategooriad = App.Database.GetDistinctKategooriad(); 
             var selectedKategooria = await DisplayActionSheet("Vali kategooria", "Tühista", null, kategooriad.ToArray());
             if (selectedKategooria != null && selectedKategooria != "Tühista")
             {
-                var filteredRaamatud = App.Database.GetItemsByKategooria(selectedKategooria); // Получить книги по выбранному жанру
+                var filteredRaamatud = App.Database.GetItemsByKategooria(selectedKategooria); 
                 raamatList.ItemsSource = filteredRaamatud;
             }
         }
@@ -60,7 +60,7 @@ namespace Raamatupood.Views
                 var riul = await DisplayActionSheet("Vali riiul", "Tühista", null, "Riul: 1", "Riul: 2", "Riul: 3", "Riul: 4", "Riul: 5", "Riul: 6");
                 if (riul != null && riul != "Tühista")
                 {
-                    var filteredRaamatud = App.Database.GetItemsByKappAndRiul(kapp, riul); // Получить книги по выбранным значением RaamatuKapp и RaamatuRiul
+                    var filteredRaamatud = App.Database.GetItemsByKappAndRiul(kapp, riul); 
                     raamatList.ItemsSource = filteredRaamatud;
                 }
             }

@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Raamatupood.Views.DBRaamatPage">
+    <ScrollView>
     <StackLayout BackgroundColor="LightCyan">
         <StackLayout >
-            <Label Text="Raamatu Pealkiri" TextColor="DarkCyan" />
+            <Label Text="Raamatu Pealkiri" TextColor="#001c1c" />
             <Entry Text="{Binding RaamatuPealkiri}"  TextColor="#7A3712" />
-            <Label Text="Raamatu Autor" TextColor="DarkCyan"  />
+            <Label Text="Raamatu Autor" TextColor="#001c1c"/>
             <Entry Text="{Binding RaamatuAutor}" TextColor="#7A3712" />
-            <Label Text="Raamatu Kirjeldus" TextColor="DarkCyan" />
-            <Entry Text="{Binding RaamatuKirjeldus}"  TextColor="#7A3712" VerticalOptions="FillAndExpand"/>
-            <Label Text="Raamatu Kategooria" TextColor="DarkCyan"  />
+            <Label Text="Raamatu Kirjeldus" TextColor="#001c1c" />
+            <Editor Text="{Binding RaamatuKirjeldus}"  TextColor="#7A3712" />
+            <Label Text="Raamatu Kategooria" TextColor="#001c1c"  />
             <Picker SelectedItem="{Binding RaamatuKategooria}" Title="Vali kategooria" TextColor="#7A3712">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -24,11 +25,11 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <Label Text="Raamatu Pilt" TextColor="DarkCyan"  />
+            <Label Text="Raamatu Pilt" TextColor="#001c1c"  />
             <Entry Text="{Binding RaamatuPilt}"  TextColor="#7A3712"/>
-            <Label Text="Raamatu Hind" TextColor="DarkCyan"  />
-            <Entry Text="{Binding RaamatuHind}"  TextColor="#7A3712"/>
-            <Label Text="Raamatu Kapp" TextColor="DarkCyan"  />
+            <Label Text="Raamatu Hind" TextColor="#001c1c"  />
+            <Entry Text="{Binding RaamatuHind}" Keyboard="Numeric"  TextColor="#7A3712"/>
+            <Label Text="Raamatu Kapp" TextColor="#001c1c"  />
             <Picker SelectedItem="{Binding RaamatuKapp}" Title="Vali kapp" TextColor="#7A3712">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -44,7 +45,7 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <Label Text="Raamatu Riul" TextColor="DarkCyan"  />
+            <Label Text="Raamatu Riul" TextColor="#001c1c"  />
             <Picker SelectedItem="{Binding RaamatuRiul}" Title="Vali riiul" TextColor="#7A3712">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -58,10 +59,11 @@
                 </Picker.ItemsSource>
             </Picker>
             <StackLayout Orientation="Horizontal">
-                <Button Text="Salvesta" Clicked="SaveRaamat" BackgroundColor="#7A3712"/>
-                <Button Text="Kustuta" Clicked="DeleteRaamat"  BackgroundColor="#7A3712"/>
-                <Button Text="Tühista" Clicked="Cancel" BackgroundColor="#7A3712"/>
+                <Button Text="Salvesta" Clicked="SaveRaamat" BackgroundColor="#7A3712" TextColor="White"/>
+                <Button Text="Kustuta" Clicked="DeleteRaamat"  BackgroundColor="#7A3712" TextColor="White"/>
+                <Button Text="Tühista" Clicked="Cancel" BackgroundColor="#7A3712" TextColor="White"/>
             </StackLayout>
         </StackLayout>
     </StackLayout>
+    </ScrollView>
 </ContentPage>
